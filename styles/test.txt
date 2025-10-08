@@ -1,0 +1,6 @@
+1- point de terminaison de l'url : 
+
+ http://api.weatherapi.com/v1
+
+
+ 2-

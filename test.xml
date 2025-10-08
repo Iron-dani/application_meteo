@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <root>
+        <location>
+            <name>London</name>
+            <region>City of London, Greater London</region>
+            <country>United Kingdom</country>
+            <lat>51.5171</lat>
+            <lon>-0.1062</lon>
+            <tz_id>Europe/London</tz_id>
+            <localtime_epoch>1758893788</localtime_epoch>
+            <localtime>2025-09-26 14:36</localtime>
+        </location>
+        <current>
+            <last_updated_epoch>1758893400</last_updated_epoch>
+            <last_updated>2025-09-26 14:30</last_updated>
+            <temp_c>15.3</temp_c>
+            <temp_f>59.5</temp_f>
+            <is_day>1</is_day>
+            <condition>
+                <text>Partly cloudy</text>
+                <icon>//cdn.weatherapi.com/weather/64x64/day/116.png</icon>
+                <code>1003</code>
+            </condition><wind_mph>8.5</wind_mph>
+            <wind_kph>13.7</wind_kph>
+            <wind_degree>94</wind_degree>
+            <wind_dir>E</wind_dir>
+            <pressure_mb>1021</pressure_mb>
+            <pressure_in>30.15</pressure_in>
+            <precip_mm>0.03</precip_mm>
+            <precip_in>0</precip_in>
+            <humidity>63</humidity>
+            <cloud>75</cloud>
+            <feelslike_c>15.3</feelslike_c>
+            <feelslike_f>59.5</feelslike_f>
+            <windchill_c>15.6</windchill_c>
+            <windchill_f>60</windchill_f>
+            <heatindex_c>15.6</heatindex_c>
+            <heatindex_f>60</heatindex_f>
+            <dewpoint_c>7.9</dewpoint_c>
+            <dewpoint_f>46.2</dewpoint_f>
+            <vis_km>10</vis_km>
+            <vis_miles>6</vis_miles>
+            <uv>1.9</uv>
+            <gust_mph>10.3</gust_mph>
+            <gust_kph>16.6</gust_kph>
+            <short_rad>181.46</short_rad>
+            <diff_rad>103.33</diff_rad>
+            <dni>129.88</dni>
+            <gti>58.16</gti>
+        </current>
+    </root>
+
+
+
