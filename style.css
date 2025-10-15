@@ -9,6 +9,9 @@ header{
     /*background: rgb(244, 191, 94);*/
 }
 
+section div{
+    margin-bottom: 40px;
+}
 section .center-container{
     border: 1px solid black;
     display: flex;
@@ -16,4 +19,35 @@ section .center-container{
     justify-content: center;
     align-items: center;
     height: 300px;
+}
+
+.container_result{
+    border: 1px solid black; 
+    padding: 10px;   
+}
+
+.zz{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+   
+}
+
+.container_result .carte{
+    border: 1px solid black;
+}
+
+.container_result .tableau_result{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.container_result .tableau_result table,tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.container_result .tableau_result td,tr{
+    text-align: center;
 }
