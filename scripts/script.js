@@ -3,7 +3,11 @@
 const API_KEY = "266dd225eb1e45aabca125802252609";
 let ville = document.getElementById("texte_ville");
 let btn = document.getElementById("rechercher");
-let affiche = document.getElementById("affiche");
+let afficheville = document.getElementById("ville_pays_region");
+let temp = document.getElementById("temp");
+let desc = document.getElementById("description");
+let img = document.getElementById("img");
+//let affiche = document.getElementById("affiche");
 
 
 async function meteo(url) {
@@ -12,11 +16,17 @@ async function meteo(url) {
     const data = await firstreponse.json();
 
     /*destructuration*/
-    //const { text } = data.current.condition;
+    const { icon, text } = data.current.condition;
     const { feelslike_c, humidity, last_updated, precip_mm, temp_c, uv, vis_km } = data.current;
-    //const { ville, pays, region, heure_date, longitude, latitude } = data.location;
+    const { name, country, region, localtime, lon, lat } = data.location;
 
-    console.log(`Température: ${temp_c}`);
+    //console.log(`Température: ${temp_c}`);
+    //console.log(`nom ville: ${name}`);
+    afficheville.textContent = name+", "+region+", "+country;
+    temp.textContent = temp_c+"°C";
+    desc.textContent = text;
+    img.src = icon;
+    
 
   }catch (error) {
     console.log('Erreur:', error);
