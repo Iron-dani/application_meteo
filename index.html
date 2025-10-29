@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Météo</title>
 </head>
@@ -17,43 +18,80 @@
             <div class="center-container">
                 <h2>Bienvenue sur notre app de météo </h2>
                 <div>
-                    <input type="text" name="" id="texte_ville" placeholder="Veuillez saisir une ville (ex: Abidjan )">
-                    <input type="button" value="RECHERCHER" id="rechercher">
+                    <input type="text" name="" id="texte_ville" placeholder="Veuillez saisir une ville (ex: Abidjan )"
+                        aria-label="Saisir le nom d'une ville">
+                    <br>
+                    <sub id="inf" aria-live="polite"></sub>
+                    <!--aria-live: pour que les lecteurs d’écran annoncent les messages de chargement ou d’erreur-->
+                    <input type="button" value="RECHERCHER" id="rechercher" aria-label="Rechercher des informations">
                 </div>
             </div>
         </section>
-        <section class="container_result">
-            <div class="zz">
-                <div class="carte">
-                    <img src="" alt="icon" id="img">
+        <section class="météo">
+            <h2>Données météorologiques</h2>
+            <div class="container_météo">
+                <div class="carte_météo">
+                    <img src="" alt="Icône météo" id="img">
                     <p id="temp"></p>
                     <p id="description"></p>
                     <p id="ville_pays_region"></p>
                 </div>
-                <div class="tableau_result">
+                <div class="tableau_météo">
                     <table>
                         <tr>
-                            <td>eee</td>
-                            <td>dd</td>
-                            <td>ffg</td>
+                            <th>Température ressentie °C</th>
+                            <td id="rsc"></td>
                         </tr>
                         <tr>
-                            <td>rdgg</td>
-                            <td>kkdk</td>
-                            <td>ksk</td>
+                            <th>Humidité</th>
+                            <td id="hmd"></td>
+                        </tr>
+                        <tr>
+                            <th>Précipatations</th>
+                            <td id="prcpm"></td>
+                        </tr>
+                        <tr>
+                            <th>Indice uv</th>
+                            <td id="u_v"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <th>Vitesse en KM</th>
+                            <td id="vskm"></td>
+                        </tr>
+                        <tr>
+                            <th>Heure locale</th>
+                            <td id="h"></td>
+                        </tr>
+                        <tr>
+                            <th>Longitude</th>
+                            <td id="lo"></td>
+                        </tr>
+                        <tr>
+                            <th>latitude</th>
+                            <td id="la"></td>
                         </tr>
                     </table>
                 </div>
-
             </div>
+            <h4>
+                Dernières mis à jour : <p id="lst"></p>
+            </h4>
+
+        </section>
+        <section>
+            <p id="ev"></p>
+            <p id="zo"></p>
+            <p id="da"></p>
+            <p id="des"></p>
+            <p id="inst"></p>
         </section>
     </main>
 
-    <script src="scripts/script.js"></script>
+    <!--<script src="scripts/script.js"></script>-->
+    <script src="test/testforecast.js"></script>
 </body>
 
 </html>
-
-<!--
-                <div id="affiche"></div>
-                <div></div>-->

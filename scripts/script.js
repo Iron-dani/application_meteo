@@ -7,13 +7,27 @@ let afficheville = document.getElementById("ville_pays_region");
 let temp = document.getElementById("temp");
 let desc = document.getElementById("description");
 let img = document.getElementById("img");
+let info = document.getElementById("inf");
+let lst = document.getElementById("lst");
+let rsc = document.getElementById("rsc");
+let hmd = document.getElementById("hmd");
+let prcpm = document.getElementById("prcpm");
+let u_v = document.getElementById("u_v");
+let vskm = document.getElementById("vskm");
+let h = document.getElementById("h");
+let lo = document.getElementById("lo");
+let la = document.getElementById("la");
+
+
 //let affiche = document.getElementById("affiche");
 
 
 async function meteo(url) {
+  info.textContent = "Chargement...";
   try {
     const firstreponse = await fetch(url);
     const data = await firstreponse.json();
+    /*console.log(data);*/
 
     /*destructuration*/
     const { icon, text } = data.current.condition;
@@ -22,123 +36,76 @@ async function meteo(url) {
 
     //console.log(`Température: ${temp_c}`);
     //console.log(`nom ville: ${name}`);
-    afficheville.textContent = name+", "+region+", "+country;
-    temp.textContent = temp_c+"°C";
+    //afficheville.innerHTML = name + ", " + region + ", " + country;
+    afficheville.textContent =  name + ", " + region + ", " + country;
+    temp.textContent = temp_c+" °C";
     desc.textContent = text;
     img.src = icon;
-    
-
-  }catch (error) {
-    console.log('Erreur:', error);
-  }
-}
-
-btn.addEventListener("click", function () {
-  meteo(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${ville.value}&lang=fr`)
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const API_KEY = "266dd225eb1e45aabca125802252609"
-const city = "Abidjan"
-async function fetchData(url) {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    const ville = data.location.name;
-    alert(ville);
+    img.alt = "Icône météo :"+ text;
+    lst.textContent = last_updated;
+    rsc.textContent = feelslike_c+" °C";
+    hmd.textContent = humidity+" %";
+    prcpm.textContent = precip_mm+" mm";
+    u_v.textContent = uv
+    vskm.textContent = vis_km+" Km";
+    h.textContent = localtime;
+    lo.textContent = lon+"°";
+    la.textContent = lat+"°";
+    info.textContent = ""; // Réinitialiser le message
   } catch (error) {
-    console.error('Erreur:', error);
-  }
-}
-fetchData(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&lang=fr`);
-*/
-/*
-const API_KEY = "266dd225eb1e45aabca125802252609";
-var city = document.getElementById("texte_ville");
-var btn = document.getElementById("rechercher");
-var txt = document.getElementById("affiche");
-
-btn.addEventListener("click", async function fetchData(url) {
-  try{
-    const reponse = await fetch(url);
-    const data = await reponse.json();
-    console.log(data);
-    const ville = data.location.name;
-    txt.innerHTML(ville);
-  }catch (error){
-    console.log('Erreur:',error);
-  }
-});
-
-fetchData(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&lang=fr`);
-*/
-
-
-/*bon
-const API_KEY = "266dd225eb1e45aabca125802252609";
-var city = document.getElementById("texte_ville");
-var btn = document.getElementById("rechercher");
-var txt = document.getElementById("affiche");
-
-
-async function fetchData(url) {
-  try {
-    const reponse = await fetch(url);
-    const data = await reponse.json();
-    console.log(data);
-    const ville = data.location.name;
-    const hr = data.location.localtime;
-    txt.innerHTML = ville+" "+hr;
-  } catch (error) {
+    info.textContent = error.message;
     console.log('Erreur:', error);
   }
 
 }
 
 btn.addEventListener("click", function () {
-  fetchData(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city.value}&lang=fr`);
+  if (!ville.value.trim())/*vérifie si le champ est vide après suppression des espaces*/ {
+    info.textContent = "Veuillez entrer une ville valide";
+    return;
+  }
+  meteo(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${encodeURIComponent(ville.value)}&lang=fr`);/*encodeURIComponent : pour éviter les erreurs avec des caractères spéciaux*/
 });
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
