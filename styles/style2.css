@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: Poppins_bold;
     src: url(fonts/Poppins/Poppins-Bold.ttf);
@@ -11,16 +12,6 @@
 @font-face {
     font-family: Poppins_regular;
     src: url(fonts/Poppins/Poppins-Regular.ttf);
-}
-
-@font-face {
-    font-family: Poppins_italique;
-    src: url(fonts/Poppins/Poppins-Italic.ttf);
-}
-
-body {
-    font-family: "Poppins_regular";
-    font-size: 16px;
 }
 
 
@@ -42,14 +33,14 @@ header {
     text-align: center;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
 
-    /*background: rgb(244, 191, 94);*/
+    /*background: rgb(244, 191, 94); */
 }
 
-.center-container {
+section div {
     margin-bottom: 40px;
 }
 
-.center-container {
+section .center-container {
     border: 1px solid #d3d3d3;
     display: flex;
     flex-direction: column;
@@ -58,18 +49,16 @@ header {
     padding: 30px;
     background-color: #f7f9fb;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-    min-height: 300px;
+    /*height: 300px; */
 
 }
-
-.center-container h2 {
+.center-container h2{
     font-family: "Poppins_regular";
     font-size: 28px;
-    margin-bottom: 30px;
 }
 
 #texte_ville {
-    width: 100%;
+    width: 70%;
     height: 40px;
     border-radius: 10px;
     font-family: "Poppins_regular";
@@ -77,19 +66,6 @@ header {
     border-color: #ccc;
     padding-left: 15px;
     margin-bottom: 5px;
-}
-
-#inf {
-    font-family: "Poppins_italique";
-    font-size: 16px;
-    /*font-weight: lighter;*/
-    color: red;
-    transition: opacity 0.3s ease;
-    opacity: 1;
-}
-
-#inf:empty {
-    opacity: 1;
 }
 
 #rechercher {
@@ -103,68 +79,46 @@ header {
     font-family: "Poppins_regular";
     font-size: 16px;
     letter-spacing: 1px;
-
+    
 }
 
 #rechercher:hover {
     background-color: #02ade7;
 }
 
-.météo {
-    border: 1px solid #d3d3d3;
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.météo h2 {
-    text-align: center;
-    padding-bottom: 50px;
-}
-
-.container_météo {
-    /*border: 1px solid #d3d3d3;*/
-    padding: 5px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-.carte_météo {
-    border: 1px solid #d3d3d3;
-    border-radius: 15px;
-    padding: 5px;
-}
-
-.tableau_météo {
-    display: flex;
-    /*justify-content: space-evenly;*/
-}
-
-.tableau_météo table {
-    margin: 5px;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.tableau_météo tr,
-.tableau_météo th,
-.tableau_météo td {
-    border: 1px solid #d3d3d3;
+.container_result {
+    border: 1px solid black;
     padding: 10px;
-    text-align: center;
+}
+
+.zz {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 
 }
 
-.tableau_météo th {
-    background-color: #e6f0fa;
-    font-family: "Poppins_semibold";
+.container_result .carte {
+    border: 1px solid black;
+    border-radius: 6%;
+    overflow: hidden;
+    padding: 5px;
 }
 
-.tableau_météo tr:nth-child(even) {
-    background-color: #f7f9fb;
+.container_result .tableau_result {
+    border: 1px solid black;
+    padding: 10px;
 }
 
-.météo h4 {
+.container_result .tableau_result table,
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.container_result .tableau_result td,
+tr {
     text-align: center;
 }

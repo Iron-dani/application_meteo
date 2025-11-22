@@ -1,0 +1,44 @@
+probleme : 
+
+je veux ajouter un detecteur automatique de position qui va donner la meteo de l'user s'il accepte 
+de donné sa position avant meme qu'il ne recherche sa ville sa position actuelle est utilise
+pour utiliser sa position actuelle je vais un script qui va utiliser geoloation de navigator
+ainsi la position est retourner sous forme de coordonnée longitidunale et latitude 
+ce format n'est pas directement exploitable dans la requete de methoe du coup je vais 
+faire une reverse geocoding qui va utiliser la longitude et la lititude puis me retourner le non de la ville
+et d'autre parametre lié a la postion ( j'utilise OSM pour cela c'est gratuit)
+ensuite avec le nom de la villes je peux maintenant faire ma requete de meteo en paix 
+
+step 
+
+1-getPosition() 
+retourne la latitude et la longitude .
+
+2-reverse geo coding request api OSM 
+
+reserveGeoCoding()
+utilise la latitude et la longitude pour faire une requete aui renvoie le nom de la ville 
+
+3-request api meteo 
+main()
+utilise le nom de la ville pour faire une requete qui va renvoyer les donne meteo 
+
+
+
+probleme : je veux utiliser les fonctions main et affiche info pour afficher les info de la meteo
+
+solution
+fonction affiche info : ne fait q'uafficher les infos du parametre data 
+fonction main : doit recup nom ville pis faire une requete avec 
+
+
+probleme: je veux que lorsque l'user arrive pour la premiere fois on lui demande sa position automatiquement 
+et si il accepte une requete est envoyer pour afficher les info meteo  de la ville.
+s'il n'accepte pas la geolocalisation alors on attend qu'il ai lui meme entrer le nom de sa ville 
+puis une requete est envoyer pour sa ville . 
+
+solution : 
+faire une fonction separer qui va utiliser la geolocalisation pour renvoyer la ville puis utilsier main pour
+l'appel peu importe la ville entrer 
+donc on peut voir la ville de deux maniere soit par auto geoloation ou par entrer user 
+function getVille 
